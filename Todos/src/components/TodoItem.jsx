@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 
-const TodoItem = ({ itemProp, handleChange, delTodo }) => {
+const TodoItem = ({ itemProp, handleChange, delTodo, setUpdate }) => {
     const [editing, setEditing] = useState(false);
     const handleEditing = () => {
         setEditing(true);
@@ -11,7 +12,7 @@ const TodoItem = ({ itemProp, handleChange, delTodo }) => {
     viewMode.display = 'none';
   } else {
     editMode.display = 'none';
-  };
+  }
   const handleUpdatedDone = (event) => {
     if (event.key === 'Enter') {
       setEditing(false);
